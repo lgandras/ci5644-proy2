@@ -1,0 +1,4 @@
+kda_blog:
+    resource: "@KDABlogBundle/Resources/config/routing.yml"
+    prefix:   /
+

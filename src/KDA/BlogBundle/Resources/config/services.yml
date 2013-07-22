@@ -1,0 +1,7 @@
+parameters:
+#    kda_blog.example.class: KDA\BlogBundle\Example
+
+services:
+#    kda_blog.example:
+#        class: %kda_blog.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]
