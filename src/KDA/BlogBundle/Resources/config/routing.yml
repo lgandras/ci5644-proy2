@@ -3,3 +3,9 @@ kda_blog_homepage:
     defaults: { _controller: KDABlogBundle:Page:index }
     requirements:
         _method:  GET
+kda_blog_show:
+    pattern:  /{id}
+    defaults: { _controller: KDABlogBundle:Blog:show }
+    requirements:
+        _method:  GET
+        id: \d+
