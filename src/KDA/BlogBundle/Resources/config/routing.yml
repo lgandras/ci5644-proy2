@@ -1,3 +1,5 @@
 kda_blog_homepage:
-    pattern:  /hello/{name}
-    defaults: { _controller: KDABlogBundle:Default:index }
+    pattern:  /
+    defaults: { _controller: KDABlogBundle:Page:index }
+    requirements:
+        _method:  GET
