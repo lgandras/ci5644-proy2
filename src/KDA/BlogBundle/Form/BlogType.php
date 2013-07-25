@@ -12,7 +12,7 @@ class BlogType extends AbstractType
         $builder
             ->add('title')
             ->add('author')
-            ->add('blog', 'text')
+            ->add('blog', 'textarea')
             ->add('Publicar', 'submit')
         ;
     }
