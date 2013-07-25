@@ -9,3 +9,13 @@ kda_blog_show:
     requirements:
         _method:  GET
         id: \d+
+kda_blog_new:
+    pattern:  /create
+    defaults: { _controller: KDABlogBundle:Blog:create }
+    requirements:
+        _method:  GET
+kda_blog_create:
+    pattern:  /create
+    defaults: { _controller: KDABlogBundle:Blog:create }
+    requirements:
+        _method:  POST

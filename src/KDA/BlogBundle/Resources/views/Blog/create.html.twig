@@ -1,0 +1,8 @@
+{% extends 'KDABlogBundle::layout.html.twig' %}
+
+{% block title %}Create blog entry{% endblock%}
+
+{% block body %}
+    <h1>Create blog entry</h1>
+    {% include 'KDABlogBundle:Blog:form.html.twig' with { 'form': form } %}
+{% endblock %}

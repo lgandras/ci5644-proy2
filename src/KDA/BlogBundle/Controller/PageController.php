@@ -8,6 +8,18 @@ class PageController extends Controller
 {
     public function indexAction()
     {
-        return $this->render('KDABlogBundle:Page:index.html.twig');
+        $em = $this->getDoctrine()
+                   ->getEntityManager();
+
+        $blogs = $em->createQueryBuilder()
+                    ->select('b')
+                    ->from('KDABlogBundle:Blog',  'b')
+                    ->addOrderBy('b.created', 'DESC')
+                    ->getQuery()
+                    ->getResult();
+
+        return $this->render('KDABlogBundle:Page:index.html.twig', array(
+            'blogs' => $blogs
+        ));
     }
 }

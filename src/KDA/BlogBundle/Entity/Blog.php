@@ -44,6 +44,21 @@ class Blog
      */
     protected $updated;
 
+
+    public function __construct()
+    {
+        $this->setCreated(new \DateTime());
+        $this->setUpdated(new \DateTime());
+    }
+
+    /**
+     * @ORM\PreUpdate
+     */
+    public function touch()
+    {
+       $this->setUpdated(new \DateTime());
+    }
+
     /**
      * Get id
      *
