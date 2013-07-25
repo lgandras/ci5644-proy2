@@ -34,13 +34,19 @@ class BlogController extends Controller
     {
         $blog  = new Blog();
         $request = $this->getRequest();
-        $form    = $this->createForm(new BlogType());
+        $form    = $this->createForm(new BlogType(), $blog);
         if ("POST" == $request->getMethod()) {
             $form->bind($request);
 
             if ($form->isValid()) {
-                return $this->redirect($this->generateUrl('KDABlogBundle_blog_show', array(
-                    'id' => $comment->getBlog()->getId()))
+
+                $em = $this->getDoctrine()
+                           ->getEntityManager();
+                $em->persist($blog);
+                $em->flush();
+
+                return $this->redirect($this->generateUrl('kda_blog_show', array(
+                    'id' => $blog->getId()))
                 );
             }
         }
